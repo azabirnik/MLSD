@@ -12,7 +12,7 @@ COMPRESSED = "compressed_data.dat"
 
 
 def compress():
-    df = pd.read_csv(UNCOMPRESSED).iloc[:10]
+    df = pd.read_csv(UNCOMPRESSED)
     df["uint16"] = 0
     df["uint32"] = 0
     for i in trange(df.shape[0]):
