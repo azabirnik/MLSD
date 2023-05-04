@@ -22,7 +22,6 @@ def compress():
         uint24_2 = df["timestamp"][i] - MIN_TIMESTAMP
         df["uint16"][i] = uint24_1 % (2**16)
         df["uint32"][i] = uint24_1 // (2**16) + 256 * uint24_2
-        print(f"{uint24_1 // (2**16)=}, {uint24_2=}")
         int40 = int(str(df["item_id"][i]), 16)
         df["item_id"][i] = int40 // 256  # int32
         df["class"][i] = int40 % 256  # int8
